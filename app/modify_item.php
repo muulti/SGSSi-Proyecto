@@ -11,6 +11,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     echo "<p>Item modificado ✅ <a href='/items'>Volver</a></p>";
 }
 ?>
+<head>
+  <meta charset="UTF-8">
+  <title>Modificar Juego</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
 <form id="item_modify_form" method="POST">
   <input name="titulo" value="<?= $item['titulo'] ?>"><br>
   <input name="genero" value="<?= $item['genero'] ?>"><br>
