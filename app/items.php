@@ -1,7 +1,7 @@
 <?php
 require 'connect.php';
 
-$res = $conn->query("SELECT id, titulo, categoria FROM items");
+$res = $conn->query("SELECT id, titulo, fecha_lanzamiento FROM videojuegos");
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +28,7 @@ $res = $conn->query("SELECT id, titulo, categoria FROM items");
             <div class="list-item-entry">
                 
                 <span class="item-title" style="font-weight: 700; color: #f0f0f0;">
-                    <?= htmlspecialchars($r['titulo']) ?> (<?= htmlspecialchars($r['categoria']) ?>)
+                    <?= htmlspecialchars($r['titulo']) ?> (<?= htmlspecialchars($r['fecha_lanzamiento']) ?>)
                 </span>
                 
                 <span style="display: flex; gap: 15px;">

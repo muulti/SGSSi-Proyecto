@@ -26,14 +26,14 @@ $stmt->close();
 </head>
 <body>
     <div class="container">
-        <h2>¡Hola <?php echo $nombreCompleto; ?>! Bienvenido/a a tu Panel de Control</h2>
+        <h2>¡Hola <?php echo $nombreCompleto; ?>! Bienvenido/a a GameVault</h2>
         
         <div class="dashboard-grid">
             <div class="dashboard-card">
                 <h3>Gestión de Juegos</h3>
                 <div class="button-group">
                     <a href="/items" class="button">Ver Catálogo</a>
-                    <a href="/items#add" class="button">Añadir Juego</a>
+                    <a href="/add_item" class="button">Añadir Juego</a>
                 </div>
             </div>
             

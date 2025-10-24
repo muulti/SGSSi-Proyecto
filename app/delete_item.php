@@ -2,7 +2,7 @@
 require 'connect.php';
 $id = $_GET["item"];
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $conn->query("DELETE FROM items WHERE id=$id");
+    $conn->query("DELETE FROM videojuegos WHERE id=$id");
     echo "<p>Item eliminado ✅ <a href='/items'>Volver</a></p>";
     exit;
 }
