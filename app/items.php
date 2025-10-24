@@ -13,6 +13,12 @@ $res = $conn->query("SELECT id, titulo, fecha_lanzamiento FROM videojuegos");
 </head>
 
 <body>
+  <?php if ($logged_in): ?>
+    <div class="logout-btn">
+      <a href="logout.php">Cerrar Sesión</a>
+    </div>
+  <?php endif;  ?>
+
   <div class="container" style="width: 600px;"> 
     
     <div class="header-controls">

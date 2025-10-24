@@ -50,7 +50,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `dni`, `telefono`, `fecha_nacimiento`, `email`, `nombre_usuario`, `contrasena`) VALUES
-(1, 'David', 'Miguez', '11111111-Z', '622342924', '2005-09-01', 'dmiguez001@ikasle.ehu.eus', 'Juan', '123');
+(1, 'Juan', 'Carlos', '11111111-Z', '622342924', '2005-09-01', 'jcarlos@ikasle.ehu.eus', 'Juan', '123');
 
 --
 -- Índices para tablas volcadas
