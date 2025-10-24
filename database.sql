@@ -55,14 +55,26 @@ INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `dni`, `telefono`, `fecha_n
 --
 -- Índices para tablas volcadas
 --
-CREATE TABLE items (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  titulo VARCHAR(100),
-  descripcion TEXT,
-  categoria VARCHAR(50),
-  fecha DATE,
-  precio DECIMAL(10,2)
+CREATE TABLE videojuegos (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(100) NOT NULL,
+    genero VARCHAR(50),
+    plataforma VARCHAR(50),
+    fecha_lanzamiento DATE,
+    precio DECIMAL(6,2)
 );
+
+INSERT INTO videojuegos (titulo, genero, plataforma, fecha_lanzamiento, precio) VALUES
+('The Legend of Zelda: Tears of the Kingdom', 'Aventura', 'Nintendo Switch', '2023-05-12', 69.99),
+('Elden Ring', 'RPG', 'PlayStation 5', '2022-02-25', 59.99),
+('Minecraft', 'Sandbox', 'PC', '2011-11-18', 26.95),
+('Cyberpunk 2077', 'Acción', 'PC', '2020-12-10', 49.99),
+('Hollow Knight', 'Metroidvania', 'Nintendo Switch', '2018-06-12', 14.99),
+('God of War Ragnarök', 'Acción', 'PlayStation 5', '2022-11-09', 69.99),
+('Stardew Valley', 'Simulación', 'PC', '2016-02-26', 14.99),
+('Red Dead Redemption 2', 'Acción', 'Xbox One', '2018-10-26', 59.99),
+('Super Mario Odyssey', 'Plataformas', 'Nintendo Switch', '2017-10-27', 59.99),
+('The Witcher 3: Wild Hunt', 'RPG', 'PC', '2015-05-19', 39.99);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

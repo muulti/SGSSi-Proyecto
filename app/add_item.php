@@ -8,10 +8,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   if (empty($_POST["titulo"]) || empty($_POST["descripcion"]) || empty($_POST["categoria"]) || empty($_POST["fecha"]) || empty($_POST["precio"])) {
     $mensaje="¡Todos los campos son obligatorios!";
   }else{
-    $stmt = $conn->prepare("INSERT INTO items (titulo, descripcion, categoria, fecha, precio) VALUES (?,?,?,?,?)");
-    $stmt->bind_param("ssssd", $_POST["titulo"], $_POST["descripcion"], $_POST["categoria"], $_POST["fecha"], $_POST["precio"]);
+    $stmt = $conn->prepare("INSERT INTO videojuegos (titulo, genero, plataforma, fecha_lanzamiento, precio) VALUES (?,?,?,?,?)");
+    $stmt->bind_param("ssssd", $_POST["titulo"], $_POST["genero"], $_POST["plataforma"], $_POST["fecha_lanzamiento"], $_POST["precio"]);
     if($stmt->execute()){
-      $mensaje="Juego añadido correctamente!✅";
+      $mensaje="Juego añadido correctamente!";
       $tipo_alerta="success";
     }
     else{
@@ -48,9 +48,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <form id="item_add_form" method="POST">
       <input name="titulo" placeholder="Título" value="<?= htmlspecialchars($_POST['titulo'] ?? '') ?>"><br>
-      <input name="descripcion" placeholder="Descripción" value="<?= htmlspecialchars($_POST['descripcion'] ?? '') ?>"><br>
-      <input name="categoria" placeholder="Categoría" value="<?= htmlspecialchars($_POST['categoria'] ?? '') ?>"><br>
-      <input type="date" name="fecha" value="<?= htmlspecialchars($_POST['fecha'] ?? '') ?>"><br>
+      <input name="genero" placeholder="Género" value="<?= htmlspecialchars($_POST['genero'] ?? '') ?>"><br>
+      <input name="plataforma" placeholder="Plataforma" value="<?= htmlspecialchars($_POST['plataforma'] ?? '') ?>"><br>
+      <input type="date" name="fecha_lanzamiento" value="<?= htmlspecialchars($_POST['fecha_lanzamiento'] ?? '') ?>"><br>
       <input type="number" step="0.01" name="precio" placeholder="Precio" value="<?= htmlspecialchars($_POST['precio'] ?? '') ?>"><br>
       <button id="item_add_submit">Guardar</button>
     </form>
