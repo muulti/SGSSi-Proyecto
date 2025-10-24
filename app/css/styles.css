@@ -1,7 +1,10 @@
 body {
     font-family: 'Montserrat', 'Arial Black', sans-serif;
     margin: 0;
-    background-color: #000000;
+    /*background-color: #000000; /* Negro*/
+    background: linear-gradient(180deg, #1e1b26, #2b2d31);/*Degradado */
+    /*background-color: #1e1b26; /* gris oscuro con matiz púrpura */
+    /*background-color: #2b2d31; /*tono grisaceo */
     color: #f0f0f0;
     display: flex;
     justify-content: center;
