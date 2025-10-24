@@ -5,7 +5,7 @@ $mensaje="";
 $tipo_alerta="";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  if (empty($_POST["titulo"]) || empty($_POST["descripcion"]) || empty($_POST["categoria"]) || empty($_POST["fecha"]) || empty($_POST["precio"])) {
+  if (empty($_POST["titulo"]) || empty($_POST["genero"]) || empty($_POST["plataforma"]) || empty($_POST["fecha_lanzamiento"]) || empty($_POST["precio"])) {
     $mensaje="¡Todos los campos son obligatorios!";
   }else{
     $stmt = $conn->prepare("INSERT INTO videojuegos (titulo, genero, plataforma, fecha_lanzamiento, precio) VALUES (?,?,?,?,?)");
