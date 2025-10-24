@@ -4,13 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Bienvenido a Gamevault</title>
     <title>Login</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="container">
-        <h2>Iniciar sesión</h2>
+	<h2>Bienvenido a Gamevault<h2>
+        <h3>Inicia sesión para ver los juegos</h3>
         <div id="login_messages"></div>
         <form id="login_form" method="POST" action="login_action.php">
             <input name="usuario" placeholder="Usuario" required>
