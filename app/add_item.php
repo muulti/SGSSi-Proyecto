@@ -63,6 +63,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div class="links">
         <a href="/">Ir a Inicio</a> | <a href="/items">Volver a la lista</a>
     </div>
+    <?php else: ?>
+    <div class="links">
+        <a href="/items" class="button">Ver listado de juegos</a>
+    </div>
     <?php endif; ?>
 
   </div>

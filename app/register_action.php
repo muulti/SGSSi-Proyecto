@@ -66,7 +66,7 @@ if ($stmt->execute()) {
     echo json_encode([
         'status' => 'ok',
         'message' => 'Registro completado',
-        'redirect' => 'login.php'
+        'redirect' => 'home.php'
     ]);
 } else {
     header('Content-Type: application/json');

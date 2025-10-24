@@ -155,6 +155,29 @@ p {
     color: #c433ff;
     text-decoration: underline;
 }
+
+.links a.button {
+    display: inline-block;
+    background-color: #a907e9;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.links a.button:hover {
+    background-color: #8805c0;
+    transform: translateY(-1px);
+    text-decoration: none;
+}
+
+.links a.button:active {
+    transform: translateY(0);
+}
+
 p a {
     text-decoration: underline;
 }
@@ -164,6 +187,72 @@ p a {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.dashboard-card {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333333;
+}
+
+.dashboard-card h3 {
+    color: #a907e9;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.button-group .button {
+    margin: 0;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    background-color: #a907e9;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #8805c0;
+    transform: translateY(-1px);
+    text-decoration: none;
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+.button.danger {
+    background-color: #dc3545;
+}
+
+.button.danger:hover {
+    background-color: #c82333;
 }
 
 .list-item-entry {
