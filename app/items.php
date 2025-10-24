@@ -43,6 +43,10 @@ $res = $conn->query("SELECT id, titulo, categoria FROM items");
     }
     ?>
     
+    <div class="links" style="margin-top: 20px;">
+        <a href="/home" class="button">Volver al Panel</a>
+    </div>
+    
   </div>
 </body>
 </html>
