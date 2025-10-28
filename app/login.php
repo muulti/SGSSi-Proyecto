@@ -9,7 +9,8 @@
 </head>
 <body>
     <div class="container">
-        <h2>Iniciar sesión</h2>
+	<h2>Bienvenido a Gamevault<h2>
+        <h3>Inicia sesión para ver los juegos</h3>
         <div id="login_messages"></div>
         <form id="login_form" method="POST" action="login_action.php">
             <input name="usuario" placeholder="Usuario" required>
