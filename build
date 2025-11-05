@@ -8,4 +8,5 @@ echo "Para encender/apagar el server usar docker-compose up/down"
 echo "***"
 echo "**"
 echo "*"
+sudo rm -rf mysql/
 docker build -t="web" .

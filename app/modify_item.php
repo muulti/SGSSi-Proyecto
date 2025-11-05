@@ -1,5 +1,5 @@
 <?php
-require 'connect.php';
+require_once 'init.php';
 $id = $_GET["item"];
 $res = $conn->query("SELECT * FROM videojuegos WHERE id=$id");
 $item = $res->fetch_assoc();

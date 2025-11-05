@@ -1,5 +1,5 @@
 <?php
-require 'connect.php';
+require_once 'init.php';
 
 $res = $conn->query("SELECT id, titulo, fecha_lanzamiento FROM videojuegos");
 ?>

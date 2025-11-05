@@ -1,12 +1,9 @@
 <?php
-session_start(); 
+require_once 'init.php';
 if (!isset($_SESSION["user"])) {
     header("Location: login.php");
     exit;
 }
-
-require_once 'connect.php';
-
 // Obtener el nombre del usuario desde la base de datos
 $stmt = $conn->prepare("SELECT nombre, apellidos FROM usuarios WHERE id = ?");
 $stmt->bind_param("i", $_SESSION["user"]);

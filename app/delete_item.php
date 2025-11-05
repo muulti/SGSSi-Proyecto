@@ -1,5 +1,5 @@
 <?php
-require 'connect.php';
+require_once 'init.php';
 $id = $_GET["item"];
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $conn->query("DELETE FROM videojuegos WHERE id=$id");

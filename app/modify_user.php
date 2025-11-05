@@ -1,13 +1,11 @@
 <?php
-session_start();
-
+require_once 'init.php';
 // Verificar si el usuario está logueado
 if (!isset($_SESSION["user"])) {
     header("Location: login.php");
     exit;
 }
 
-require 'connect.php';
 $id = $_SESSION["user"];
 
 // Usar consulta preparada para obtener los datos del usuario

@@ -1,6 +1,5 @@
 <?php
-require 'connect.php';
-
+require_once 'init.php';
 $mensaje="";
 $tipo_alerta="";
 

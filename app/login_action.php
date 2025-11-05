@@ -1,7 +1,5 @@
 <?php
-require 'connect.php';
-session_start();
-
+require_once 'init.php';
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     http_response_code(405);
     exit(json_encode(['status' => 'error', 'message' => 'Método no permitido']));

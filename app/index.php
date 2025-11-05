@@ -1,7 +1,5 @@
 <?php
-
-session_start();
-require_once __DIR__ . '/connect.php';
+require_once 'init.php';
 
 // Obtener la ruta sin parámetros
 $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
