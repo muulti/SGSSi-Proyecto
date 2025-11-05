@@ -2,6 +2,7 @@ FROM php:8.2-apache
 
 # Habilitar mod_rewrite
 RUN a2enmod rewrite
+RUN a2enmod headers
 
 # Instalar extensiones de PHP necesarias
 RUN docker-php-ext-install mysqli
