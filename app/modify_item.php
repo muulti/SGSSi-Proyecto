@@ -1,5 +1,13 @@
 <?php
 require_once 'init.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+        http_response_code(403);
+        die("CSRF validation failed.");
+    }
+}
+
 $id = $_GET["item"];
 $res = $conn->query("SELECT * FROM videojuegos WHERE id=$id");
 $item = $res->fetch_assoc();
@@ -23,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <input name="plataforma" value="<?= $item['plataforma'] ?>"><br>
   <input type="date" name="fecha_lanzamiento" value="<?= $item['fecha_lanzamiento'] ?>"><br>
   <input type="number" step="0.01" name="precio" value="<?= $item['precio'] ?>"><br>
+  <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
   <button id="item_modify_submit">Actualizar</button>
 </form>
 

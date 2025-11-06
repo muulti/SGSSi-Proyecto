@@ -6,6 +6,13 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit;
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+        http_response_code(403);
+        die("CSRF validation failed.");
+    }
+}
+
 $nombre = $_POST["nombre"] ?? '';
 $apellidos = $_POST["apellidos"] ?? '';
 $dni = strtoupper($_POST["dni"] ?? '');

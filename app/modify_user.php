@@ -1,11 +1,15 @@
 <?php
 require_once 'init.php';
-// Verificar si el usuario está logueado
 if (!isset($_SESSION["user"])) {
     header("Location: login.php");
     exit;
 }
-
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+        http_response_code(403);
+        die("CSRF validation failed.");
+    }
+}
 $id = $_SESSION["user"];
 
 // Usar consulta preparada para obtener los datos del usuario
@@ -193,7 +197,7 @@ if (isset($_GET['updated'])) {
                 <label for="contrasena">Nueva Contraseña (dejar en blanco para mantener la actual):</label>
                 <input type="password" id="contrasena" name="contrasena" minlength="6">
             </div>
-            
+            <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
             <div class="button-group">
                 <button type="submit" id="user_modify_submit" class="button">Actualizar Datos</button>
                 <a href="/home" class="button">Volver al Panel</a>

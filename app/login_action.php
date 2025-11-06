@@ -1,5 +1,13 @@
 <?php
 require_once 'init.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+        http_response_code(403);
+        die("CSRF validation failed.");
+    }
+}
+
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     http_response_code(405);
     exit(json_encode(['status' => 'error', 'message' => 'Método no permitido']));

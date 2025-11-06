@@ -1,3 +1,6 @@
+<?php
+require_once 'init.php';
+?>
 <!doctype html>
 <html lang="es">
 <head>
@@ -19,6 +22,7 @@
             <input type="email" name="email" placeholder="Email" required>
             <input name="usuario" placeholder="Nombre de usuario" required>
             <input type="password" name="password" placeholder="Contraseña" required>
+	    <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
             <button id="register_submit" type="submit">Registrar</button>
         </form>
         <div class="links"><a href="login.php">¿Ya tienes cuenta? Inicia sesión</a></div>

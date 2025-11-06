@@ -1,4 +1,6 @@
-
+<?php
+require_once 'init.php';
+?>
 <!doctype html>
 <html lang="es">
 <head>
@@ -13,8 +15,9 @@
         <h3>Inicia sesión para ver los juegos</h3>
         <div id="login_messages"></div>
         <form id="login_form" method="POST" action="login_action.php">
-            <input name="usuario" placeholder="Usuario" required>
+	    <input name="usuario" placeholder="Usuario" required>
             <input type="password" name="password" placeholder="Contraseña" required>
+	    <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
             <button id="login_submit" type="submit">Entrar</button>
         </form>
         <div class="links">

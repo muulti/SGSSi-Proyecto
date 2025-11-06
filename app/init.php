@@ -9,5 +9,10 @@ if (session_status() === PHP_SESSION_NONE) {
         'samesite' => 'Strict'        // or 'Lax' if you use external redirects
     ]);
     session_start();
+
+    if (empty($_SESSION['csrf_token'])) {
+    	$_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
+
 }
 require_once 'connect.php';
