@@ -1,5 +1,5 @@
 <?php
-//para no repetir la conexion en todos los archivos, centralizamos la conexion aqui y llamamos en cada archivo para conectar
+// Configuración de conexión a la base de datos
 $hostname = "db";
 $username = "admin";
 $password = "test";
@@ -10,5 +10,5 @@ if ($conn->connect_error) {
     die("Database connection failed: " . $conn->connect_error);
 }
 
-$conn->set_charset("utf8mb4"); //PAra que permita tildes y ñ
+$conn->set_charset("utf8mb4");
 ?>

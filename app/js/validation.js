@@ -9,9 +9,7 @@ function validarRegistro() {
     let emailElem = document.querySelector("[name='email']");
     let fechaElem = document.querySelector("[name='fecha']") || document.querySelector("[name='fecha_nacimiento']");
     
-    // Verificar que todos los elementos requeridos existen
     if (!dniElem || !telefonoElem || !nombreElem || !apellidosElem || !usuarioElem || !emailElem || !fechaElem) {
-        console.error("No se encontraron todos los campos requeridos");
         return false;
     }
 

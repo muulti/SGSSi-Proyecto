@@ -34,7 +34,6 @@ const regForm = document.getElementById('register_form');
                     messagesDiv.innerHTML = '<div class="alert">' + errorMessage + '</div>';
                 }
             } catch (error) {
-                console.error('Error:', error);
                 messagesDiv.innerHTML = '<div class="alert">Error al procesar la solicitud. Por favor, inténtalo de nuevo.</div>';
             }
         });

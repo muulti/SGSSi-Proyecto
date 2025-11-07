@@ -40,6 +40,10 @@ CREATE TABLE `usuarios` (
   `nombre_usuario` VARCHAR(50) NOT NULL UNIQUE,
   `contrasena` VARCHAR(255) NOT NULL, -- Para almacenar la contraseña hasheada
   
+  -- Control de intentos fallidos de login
+  `intentos_fallidos` INT DEFAULT 0,
+  `bloqueado_hasta` DATETIME DEFAULT NULL,
+  
   -- Control de registro
   `fecha_registro` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   
@@ -51,6 +55,19 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `dni`, `telefono`, `fecha_nacimiento`, `email`, `nombre_usuario`, `contrasena`) VALUES
 (1, 'David', 'Miguez', '11111111-Z', '622342924', '2005-09-01', 'dmiguez001@ikasle.ehu.eus', 'Juan', '123');
+
+--
+-- Tabla para controlar intentos fallidos de login por IP
+--
+CREATE TABLE `login_attempts` (
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `ip_address` VARCHAR(45) NOT NULL,
+  `intentos` INT DEFAULT 1,
+  `bloqueado_hasta` DATETIME DEFAULT NULL,
+  `ultimo_intento` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  INDEX `idx_ip` (`ip_address`),
+  INDEX `idx_bloqueado` (`bloqueado_hasta`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tablas volcadas

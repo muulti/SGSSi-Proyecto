@@ -4,9 +4,6 @@ require_once 'init.php';
 // Obtener la ruta sin parámetros
 $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-// --- DEBUG OPCIONAL ---
-// echo "<pre>Ruta solicitada: $request</pre>";
-
 switch ($request) {
     // Home
     case '/':
